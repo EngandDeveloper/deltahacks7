@@ -17,6 +17,10 @@ def user_input_screen(request):
             print(date_recorded)
             print(current_user)
 
+            user_input = UserInput.objects.create(current_date=date_recorded,
+                                                  blood_pressure=blood_pressure, user=current_user)
+            user_input.save()
+
             return redirect("/")
 
     return render(request, "input/user_input.html")
