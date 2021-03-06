@@ -22,4 +22,10 @@ urlpatterns = [
     #users paths
     path('users/', include('users.urls')),
     path('', users.views.index, name='index'),
+    #charts paths
+    path('charts/', include('charts.urls')),
+    #input paths
+    path('input/', include('input.urls')),
+    #suggestions paths
+    path('suggestions/', include('suggestions.urls')),
 ]
