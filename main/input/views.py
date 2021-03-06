@@ -9,16 +9,27 @@ def user_input_screen(request):
 
     if request.method == "POST":
         if request.POST.get("input_data"):
-            blood_pressure = request.POST.get("blood_pressure")
+            high_blood_pressure = request.POST.get("high_blood_pressure")
+            low_blood_pressure = request.POST.get("low_blood_pressure")
             date_recorded = request.POST.get("date_recorded")
             current_user = request.user
 
-            print(blood_pressure)
+            print(high_blood_pressure)
+            print(low_blood_pressure)
             print(date_recorded)
             print(current_user)
 
-            user_input = UserInput.objects.create(current_date=date_recorded,
-                                                  blood_pressure=blood_pressure, user=current_user)
+            # If user does not input a date, use current date
+            if (not date_recorded):
+                user_input = UserInput.objects.create(high_blood_pressure=high_blood_pressure,
+                                                      low_blood_pressure=low_blood_pressure,
+                                                      user=current_user)
+
+            else:
+                user_input = UserInput.objects.create(current_date=date_recorded,
+                                                      high_blood_pressure=high_blood_pressure,
+                                                      low_blood_pressure=low_blood_pressure,
+                                                      user=current_user)
             user_input.save()
 
             return redirect("/")

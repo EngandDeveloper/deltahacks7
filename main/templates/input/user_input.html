@@ -28,8 +28,11 @@
             <form method="post">
                 {% csrf_token %}
                 <h2>Input Data</h2>
-                <p><b>Blood Pressure</b></p>
-                <input type="text" name="blood_pressure">
+                <p><b>High Blood Pressure</b></p>
+                <input type="text" name="high_blood_pressure">
+                <br>
+                <p><b>Low Blood Pressure</b></p>
+                <input type="text" name="low_blood_pressure">
                 <br>
                 <p><b>Date Recorded</b></p>
                 <input type="date" name="date_recorded">
