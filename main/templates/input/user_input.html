@@ -1,0 +1,48 @@
+{% extends 'users/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/landing.css' %}"/>
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="bg-1">
+        <div class="container">
+            <div class="row">
+              <div class="col align-self-center">
+                <h3>User Input</h3>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="bg-2">
+        <div class="container">
+            <form method="post">
+                {% csrf_token %}
+                <h2>Input Data</h2>
+                <p><b>Blood Pressure</b></p>
+                <input type="text" name="blood_pressure">
+                <br>
+                <p><b>Date Recorded</b></p>
+                <input type="date" name="date_recorded">
+                <br><br>
+                <button type="submit" name="input_data" value="input_data">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-3">
+        <div class="container">
+
+        </div>
+    </div>
+
+{% endblock %}
