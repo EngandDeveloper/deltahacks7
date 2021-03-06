@@ -1,0 +1,23 @@
+{% extends 'users/base.html' %}
+
+{% block body %}
+
+    <br>
+    <div class="form-wrapper">
+        <form action="/loginUser/" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+            <input type="text" class="form-control" name="username" placeholder="Username...">
+            </div>
+            <div class="mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Password...">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login" name="submitLogin">
+
+        </form>
+    </div>
+    {% for message in messages %}
+        <p id="messages">{{message}}</p>
+    {% endfor %}	
+
+{% endblock %}

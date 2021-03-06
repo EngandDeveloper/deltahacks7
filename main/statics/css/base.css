@@ -1,0 +1,37 @@
+p {
+    margin: 0%!important;
+    padding: 0%!important;
+}
+
+header {
+    background-color: #F1FAEE;
+}
+
+footer {
+    background-color: #2B9348;
+    color: #F1FAEE;
+    padding-left: 2%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    align-content: center;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+.form-wrapper {
+    /* margin-left: 25%!important; */
+    align-content: center;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    display: table;
+}
