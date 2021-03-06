@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'charts',
     'input',
     'suggestions',
+    'doctorpatient',
 ]
 
 MIDDLEWARE = [

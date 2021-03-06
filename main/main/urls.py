@@ -35,4 +35,6 @@ urlpatterns = [
     path('input/', include('input.urls')),
     #suggestions paths
     path('suggestions/', include('suggestions.urls')),
+    #suggestions paths
+    path('doctorpatient/', include('doctorpatient.urls')),
 ]
