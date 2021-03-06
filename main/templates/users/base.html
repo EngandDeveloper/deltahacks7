@@ -29,12 +29,9 @@
 
                     <nav>
                         <ul class="nav justify-content-end">
-                            <li class="nav-item"><a class="nav-link" href="">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Register</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Splitting the Bill?</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Expenses</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Savings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                             <li class="nav-item"><a class="nav-link disabled">Hello, {{request.user}}</a></li>
                             {% if request.user.is_authenticated %}
                                 <li class="nav-item"><a class="nav-link" href="{% url 'logoutUser' %}">Logout</a></li>
