@@ -16,7 +16,7 @@
       <br>
       <br>
       <h2 class="main-title">Track your blood pressure,</h2>
-      <h3 class="secondary-title"> Get instant suggestions,</h3>
+      <h3> Get instant suggestions,</h3>
       <h2 class="main-title">Keep in touch with your doctor!</h2>
       <br>
       <br>
@@ -24,7 +24,22 @@
 
     <div class="find-doctor-div centre-wrapper">
       <!-- Add a divisor of some sort here -->
-      <h4>Find your doctor now:</h4>
+      <h4 class="secondary-title" >Find your doctor now:</h4>
+      <div class="form-wrapper-90">
+        <form class="row" method="POST">
+            {% csrf_token %}
+            <div class="col-3">
+              <label for="location" class="form-label btn bg-info">Location</label>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control" name="location" placeholder="Where do you live?">
+            </div>
+            <div class="col-3">
+              <input type="submit" class="btn btn-info" value="Find" name="submitLogin">
+            </div>
+
+        </form>
+    </div>
       <br>
       <br>
     </div>
@@ -40,7 +55,7 @@
         </div>
 
         <div class="col">
-          <img src="{% static "images/machine.jpg" %}" alt="Hi!" width="100%" height="100%" />
+          <img src="{% static "images/machine.jpg" %}" class="img-fluid rounded-circle" alt="Hi!"/>
         </div>
       </div>
       <br>
