@@ -12,27 +12,39 @@
 {% block body %}
 
   <div class="bg-4">
-    <div class="title-div">
+    <div class="title-div centre-wrapper">
+      <br>
+      <br>
       <h2 class="main-title">Track your blood pressure,</h2>
       <h3 class="secondary-title"> Get instant suggestions,</h3>
       <h2 class="main-title">Keep in touch with your doctor!</h2>
+      <br>
+      <br>
     </div>
 
-    <div class="find-doctor-div">
+    <div class="find-doctor-div centre-wrapper">
       <!-- Add a divisor of some sort here -->
       <h4>Find your doctor now:</h4>
+      <br>
+      <br>
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col">
-
+          <h3>Take action now! Start taking care of yourself...</h3>
+          <br>
+          <h4>Track your blood pressure, connect with your doctor!</h4>
+          <br>
+          <a href="{% url 'register' %}" class="btn btn-primary btn-lg">Register Now!</a>
         </div>
 
         <div class="col">
-          
+          <img src="{% static "images/machine.jpg" %}" alt="Hi!" width="100%" height="100%" />
         </div>
       </div>
+      <br>
+      <br>
     </div>
   </div>
 

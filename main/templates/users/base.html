@@ -26,31 +26,29 @@
         <div class="page-container">
             <div class="content-wrap">
                 <header>
-
                     <nav>
                         <ul class="nav justify-content-end">
-                            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
-                            <li class="nav-item"><a class="nav-link disabled">Hello, {{request.user}}</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="{% url 'index' %}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="{% url 'login' %}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="{% url 'register' %}">Register</a></li>
+                            <li class="nav-item"><a class="nav-link disabled text-primary bg-dark">Hello, {{request.user}}</a></li>
                             {% if request.user.is_authenticated %}
-                                <li class="nav-item"><a class="nav-link" href="{% url 'logoutUser' %}">Logout</a></li>
+                                <li class="nav-item"><a class="nav-link text-light" href="{% url 'logoutUser' %}">Logout</a></li>
                             {% endif %}
                         </ul>
-
                     </nav>
-
                 </header>
 
+                
                 {% block body %}
-
+                    
                 {% endblock %}
-
+                
             </div>
 
-            <footer>
+            <!-- <footer>
                 <p> Deltahacks VII 2021 &copy </p>
-            </footer>
+            </footer> -->
         
         </div>
 

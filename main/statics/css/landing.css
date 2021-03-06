@@ -1,3 +1,4 @@
+/* Background Colors START */
 .bg-1 {
     background-color: #E2FAB5;
     color: black;
@@ -17,7 +18,7 @@
 }
 
 .bg-4 {
-    background-color: #56A5B0;
+    background-color: #006466;
     color: #F4F9F9;
 }
 
@@ -29,3 +30,26 @@
 .bg-6 {
     background-color: #ABC5C7;
 }
+
+/* Background Colors END */
+
+/* Title Div START */
+.title-div {
+    text-align: center;
+}
+
+.main-title {
+    color: #80b918;
+}
+
+/* Title Div END */
+
+/* Aligners START */
+.centre-wrapper {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    display: table;
+}
+
+/* Aligners END */

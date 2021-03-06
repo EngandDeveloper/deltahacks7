@@ -4,11 +4,11 @@ p {
 }
 
 header {
-    background-color: #F1FAEE;
+    background-color: #e5383b;
 }
 
 footer {
-    background-color: #2B9348;
+    background-color: #00B4D8;
     color: #F1FAEE;
     padding-left: 2%;
     position: absolute;
@@ -34,4 +34,9 @@ footer {
     width: 50%;
     margin: auto;
     display: table;
+}
+
+.bg-4 {
+    background-color: #006466;
+    color: #F4F9F9;
 }
