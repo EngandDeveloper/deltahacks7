@@ -12,40 +12,27 @@
 
 {% block body %}
 
+    <br>
+    <br>
 
-    <div class="bg-1">
-        <div class="container">
-            <div class="row">
-              <div class="col align-self-center">
-                <h3>User Input</h3>
-              </div>
-            </div>
-          </div>
-    </div>
-
-    <div class="bg-2">
+    <div class="form-wrapper">
         <div class="container">
             <form method="post">
                 {% csrf_token %}
                 <h2>Input Data</h2>
                 <p><b>High Blood Pressure</b></p>
-                <input type="text" name="high_blood_pressure">
+                <input type="text" class="form-control" name="high_blood_pressure">
                 <br>
                 <p><b>Low Blood Pressure</b></p>
-                <input type="text" name="low_blood_pressure">
+                <input type="text" class="form-control" name="low_blood_pressure">
                 <br>
                 <p><b>Date Recorded</b></p>
-                <input type="date" name="date_recorded">
-                <br><br>
-                <button type="submit" name="input_data" value="input_data">Submit</button>
+                <input type="date" class="form-control" name="date_recorded">
+                <br>
+                <button type="submit" class="btn btn-info" name="input_data" value="input_data">Submit</button>
             </form>
         </div>
     </div>
 
-    <div class="bg-3">
-        <div class="container">
-
-        </div>
-    </div>
 
 {% endblock %}

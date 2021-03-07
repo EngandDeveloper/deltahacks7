@@ -1,11 +1,19 @@
 {% extends 'users/base.html' %}
 
 {% block body %}
-    DOCTOR DASHBOARD<br>
+    DOCTOR DASHBOARD
+    
+    <br>
+    <br>
 
-    <div>
+    <div class="form-wrapper">
         {% for p in patients %}
-            <p>{{forloop.counter}} : {{p.user.username}}</p>
+            <form action="/doctorpatient/seeUser/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="patientname" value={{p.user.username}}>
+                <p>{{forloop.counter}}: <input type="submit" value={{p.user.username}} class="btn btn-info"></p>
+            </form>    
+            <br>
         {% endfor %}
     </div>
 

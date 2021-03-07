@@ -75,6 +75,10 @@ footer {
     color: #F4F9F9;
 }
 
+.bg-0 {
+    background-color: white;
+}
+
 /* Title Div START */
 .title-div {
     text-align: center;
