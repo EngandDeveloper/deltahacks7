@@ -1,0 +1,12 @@
+{% extends 'users/base.html' %}
+
+{% block body %}
+    DOCTOR DASHBOARD<br>
+
+    <div>
+        {% for p in patients %}
+            <p>{{forloop.counter}} : {{p.user.username}}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
