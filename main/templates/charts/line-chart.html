@@ -10,12 +10,18 @@ var ctx = document.getElementById('myChart').getContext('2d');
         // The data for our dataset
         data: {
             labels: {{ labels|safe }},
-            datasets: [{
-                label: 'My First dataset',
+            datasets: [{                 // Chart parameters here!!!
+                label: 'Diastolic Blood Pressure',
                 fill: false,
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: {{ data|safe }}
+                backgroundColor: 'rgb(146,219,234)',
+                borderColor: 'rgb(19, 3, 238)',    //Line colour
+                data: {{ dia_data|safe }}
+            },{
+                label: 'Systolic Blood Pressure',
+                fill: '-1',
+                backgroundColor: 'rgb(255,0,0)',
+                borderColor: 'rgb(0, 0, 0)',
+                data: {{ sys_data|safe }}
             }]
         },
     
