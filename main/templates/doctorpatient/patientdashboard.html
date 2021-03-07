@@ -64,7 +64,7 @@
             <div class="form-wrapper-70">
                 {% for s in suggestions %}
                     <p> {{forloop.counter}}) {{s.suggestion}} </p>
-                    <form action="/doctorpatient/readSuggestion/" method="POST">
+                    <form method="POST">
                         <input type="hidden" name="patientname" value={{s}}>
                         <input type="submit" value="Done!" class="btn btn-info"></p>
                     </form>
