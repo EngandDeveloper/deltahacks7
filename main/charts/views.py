@@ -10,6 +10,7 @@ def line_chart(request):
     user_data = UserInput.objects.all().filter(user__username__contains=user.username)
     dates = []
     sys = []
+    dia = []
     print(type(user_data[0].current_date))
     for data_point in user_data:
         sys.append(str(data_point.high_blood_pressure))
