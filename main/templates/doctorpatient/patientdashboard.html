@@ -16,13 +16,44 @@
         </div>
 
         <br>
-
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
         <div id="seeChart">
-            <a class="btn btn-info" href="{% url 'line-chart' %}">See Chart</a>
+            <a class="btn btn-info" href="{% url 'line-chart' %}">Enlarge Chart</a>
         </div>
 
         <h3 class="main-title">The Last 3 Blood Pressure Measurements</h3>
 
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+        
+            // The data for our dataset
+            data: {
+                labels: {{ labels|safe }},
+                datasets: [{                 // Chart parameters here!!!
+                    label: 'Diastolic Blood Pressure',
+                    fill: false,
+                    backgroundColor: 'rgb(146,219,234)',
+                    borderColor: 'rgb(19, 3, 238)',    //Line colour
+                    data: {{ dia_data|safe }}
+                },{
+                    label: 'Systolic Blood Pressure',
+                    fill: '-1',
+                    backgroundColor: 'rgb(255,0,0)',
+                    borderColor: 'rgb(0, 0, 0)',
+                    data: {{ sys_data|safe }}
+                }]
+            },
+        
+            // Configuration options go here
+            options: {
+            }
+        });
+    </script>
 {% endblock %}

@@ -32,6 +32,19 @@ def user_input_screen(request):
                                                       user=current_user)
             user_input.save()
 
-            return render(request, "doctorpatient/patientdashboard.html")
+            user= request.user
+            user_data = UserInput.objects.all().filter(user__username__contains=user.username)
+            dates = []
+            sys = []
+            dia = []
+            print(type(user_data[0].current_date))
+            for data_point in user_data:
+                sys.append(str(data_point.high_blood_pressure))
+                dia.append(str(data_point.low_blood_pressure))
+                dates.append(str(data_point.current_date)[:10])
+            return render(request, "doctorpatient/patientdashboard.html", 
+            {'labels' : dates,
+            'dia_data': dia,
+            'sys_data': sys})
 
     return render(request, "input/user_input.html")
