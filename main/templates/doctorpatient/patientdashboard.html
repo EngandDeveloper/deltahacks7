@@ -52,7 +52,28 @@
             <br>
             <br>
         </div>
+
+        {% if isDoctor %}
+            <div class="form-wrapper-70">
+                Send a suggestion to your patient
+            </div>
+        {% endif %}
         
+
+        {% if not isDoctor %}
+            <div class="form-wrapper-70">
+                {% for s in suggestions %}
+                    <p> {{forloop.counter}}) {{s.suggestion}} </p>
+                    <form action="/doctorpatient/readSuggestion/" method="POST">
+                        <input type="hidden" name="patientname" value={{s}}>
+                        <input type="submit" value="Done!" class="btn btn-info"></p>
+                    </form>
+                {% endfor %}
+                <br>
+            </div>
+            <br>
+        {% endif %}
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>

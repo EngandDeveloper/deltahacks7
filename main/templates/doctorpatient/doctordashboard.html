@@ -1,12 +1,26 @@
 {% extends 'users/base.html' %}
 
 {% block body %}
-    DOCTOR DASHBOARD
     
-    <br>
-    <br>
-
+    
     <div class="form-wrapper">
+
+        <br>
+
+        <h3>DOCTOR DASHBOARD</h3>
+
+        <br>
+
+        <div id="newUserInput">
+            <a class="btn btn-info" href="{% url 'giveAdvice' %}">Give Suggestion to Patient</a>
+        </div>
+
+        <br>
+
+        <br>
+        <br>
+
+    
         {% for p in patients %}
             <form action="/doctorpatient/seeUser/" method="POST">
                 {% csrf_token %}

@@ -18,3 +18,9 @@ class Patient(models.Model):
 
     objects = models.Manager()
 
+class Suggestion(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, blank=True)
+    suggestion = models.CharField(max_length=10000, null=False, blank=True)
+    isRead = models.BooleanField(null=False, default=False)
+
+    objects = models.Manager()

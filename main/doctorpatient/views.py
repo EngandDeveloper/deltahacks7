@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Doctor, Patient
+from .models import Doctor, Patient, Suggestion
 from input.models import UserInput
 # Create your views here.
 def dashboard(request):
@@ -31,6 +31,16 @@ def dashboard(request):
                 records.append(recordList[i])
         doctorName = userPatient[0].doctor.user.username
 
+        suggestionList = Suggestion.objects.all().filter(user__username__contains=user.username)
+        print(suggestionList)
+        suggestions = []
+        if len(suggestionList) > 0:
+            for i in suggestionList:
+                # if i.isRead == False:
+                print("i is: ", i)
+                suggestions.append(i)
+
+
         user_data = UserInput.objects.all().filter(user__username__contains=user.username)
         dates = []
         sys = []
@@ -41,7 +51,9 @@ def dashboard(request):
             dia.append(str(data_point.low_blood_pressure))
             dates.append(str(data_point.current_date)[:10]) 
 
-        context = {'doctorName':doctorName, 'records':records, 'labels' : dates,'dia_data': dia,'sys_data': sys}
+        print(suggestions)
+
+        context = {'doctorName':doctorName, 'records':records, 'labels' : dates,'dia_data': dia,'sys_data': sys, 'isDoctor': False, 'suggestions':suggestions}
         return render(request, 'doctorpatient/patientdashboard.html', context)
 
 
@@ -91,5 +103,18 @@ def seeUser(request):
             dia.append(str(data_point.low_blood_pressure))
             dates.append(str(data_point.current_date)[:10]) 
 
-        context = {'doctorName':doctorName, 'records':records, 'labels' : dates,'dia_data': dia,'sys_data': sys}
+        context = {'doctorName':doctorName, 'records':records, 'labels' : dates,'dia_data': dia,'sys_data': sys, 'isDoctor': True}
         return render(request, 'doctorpatient/patientdashboard.html', context)
+
+def giveAdvice(request):
+    form = Suggestion()
+    if request.method == "POST":
+        userName = request.POST.get('patientname')
+        userObject = Patient.objects.all().filter(user__username__contains=userName)
+        user = userObject[0].user
+        suggestion = request.POST.get('suggestion')
+        isRead = False
+        form = Suggestion(user=user, suggestion=suggestion, isRead=isRead)
+        form.save()
+    return render(request, 'doctorpatient/suggestion.html')
+
