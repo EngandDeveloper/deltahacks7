@@ -32,6 +32,6 @@ def user_input_screen(request):
                                                       user=current_user)
             user_input.save()
 
-            return redirect("/")
+            return render(request, "doctorpatient/patientdashboard.html")
 
     return render(request, "input/user_input.html")

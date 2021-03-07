@@ -36,6 +36,24 @@ footer {
     display: table;
 }
 
+.form-wrapper-70 {
+    /* margin-left: 25%!important; */
+    align-content: center;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    display: table;
+}
+
+.form-wrapper-80 {
+    /* margin-left: 25%!important; */
+    align-content: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    display: table;
+}
+
 .form-wrapper-90 {
     /* margin-left: 25%!important; */
     align-content: center;
@@ -45,7 +63,29 @@ footer {
     display: table;
 }
 
+.centre-wrapper {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    display: table;
+}
+
 .bg-4 {
     background-color: #006466;
     color: #F4F9F9;
 }
+
+/* Title Div START */
+.title-div {
+    text-align: center;
+}
+
+.main-title {
+    color: #80b918!;
+}
+
+.secondary-title {
+    color: #00ffe7!;
+}
+
+/* Title Div END */

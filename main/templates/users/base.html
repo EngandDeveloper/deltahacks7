@@ -31,10 +31,12 @@
                         <ul class="nav justify-content-end">
                             <li class="nav-item"><a class="nav-link text-light" href="{% url 'index' %}">Home</a></li>
                             <li class="nav-item"><a class="nav-link text-light" href="{% url 'dashboard' %}">Dashboard</a></li>
-                            <li class="nav-item"><a class="nav-link text-light" href="{% url 'user_input' %}">User Input</a></li>
-                            <li class="nav-item"><a class="nav-link text-light" href="{% url 'line-chart' %}">Charts</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link text-light" href="{% url 'user_input' %}">User Input</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="{% url 'line-chart' %}">Charts</a></li> -->
+                            {% if not request.user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link text-light" href="{% url 'login' %}">Login</a></li>
                             <li class="nav-item"><a class="nav-link text-light" href="{% url 'register' %}">Register</a></li>
+                            {% endif %}
                             <li class="nav-item"><a class="nav-link disabled text-primary bg-dark">Hello, {{request.user}}</a></li>
                             {% if request.user.is_authenticated %}
                                 <li class="nav-item"><a class="nav-link text-light" href="{% url 'logoutUser' %}">Logout</a></li>

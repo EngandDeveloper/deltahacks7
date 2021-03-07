@@ -22,6 +22,7 @@ def dashboard(request):
         context = {'patients':patients}
         return render(request, 'doctorpatient/doctordashboard.html', context)
     else:
+        #get the last 3 measurement record here as well
         doctorName = userPatient[0].doctor.user.username
         context = {'doctorName':doctorName}
         return render(request, 'doctorpatient/patientdashboard.html', context)

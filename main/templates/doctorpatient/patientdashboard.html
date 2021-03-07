@@ -1,6 +1,28 @@
 {% extends 'users/base.html' %}
 
 {% block body %}
-    PATIENT DASHBOARD<br>
-    YOUR DOCTOR IS: {{doctorName}}
+    <div class="form-wrapper">
+        <br>
+        <br>
+        PATIENT DASHBOARD
+        <br>
+        <br>
+        YOUR DOCTOR IS: {{doctorName}}
+        <br>
+        <br>
+
+        <div id="newUserInput">
+            <a class="btn btn-info" href="{% url 'user_input' %}">Enter a New Blood Pressure Measurement</a>
+        </div>
+
+        <br>
+
+        <div id="seeChart">
+            <a class="btn btn-info" href="{% url 'line-chart' %}">See Chart</a>
+        </div>
+
+        <h3 class="main-title">The Last 3 Blood Pressure Measurements</h3>
+
+    </div>
+
 {% endblock %}
